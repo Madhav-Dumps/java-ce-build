@@ -2,6 +2,21 @@ name: Dirtybuild Lava Build
 
 on:
   workflow_dispatch:
+  
+permissions:
+  Actions: write
+  Checks: write
+  Contents: write
+  Deployments: write
+  Discussions: write
+  Issues: write
+  Metadata: read
+  Packages: write
+  Pages: write
+  PullRequests: write
+  RepositoryProjects: write
+  SecurityEvents: write
+  Statuses: write
 
 env:
   GIT_GITHUB_TOKEN: "${{secrets.GIT_GITHUB_TOKEN}}"

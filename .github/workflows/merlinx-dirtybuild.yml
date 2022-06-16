@@ -3,6 +3,21 @@ name: Dirtybuild Merlinx Build
 on:
   workflow_dispatch:
 
+permissions:
+  Actions: write
+  Checks: write
+  Contents: write
+  Deployments: write
+  Discussions: write
+  Issues: write
+  Metadata: read
+  Packages: write
+  Pages: write
+  PullRequests: write
+  RepositoryProjects: write
+  SecurityEvents: write
+  Statuses: write
+  
 env:
   GIT_GITHUB_TOKEN: "${{secrets.GIT_GITHUB_TOKEN}}"
   GIT_CONFIG_EMAIL: "85406105+Madhav-Sheth@users.noreply.github.com"
