@@ -5,7 +5,6 @@ on:
 
 permissions:
   Actions: write
-  Checks: write
   Contents: write
   Deployments: write
   Discussions: write
