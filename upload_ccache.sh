@@ -12,9 +12,9 @@ echo "${rlslone_config}" > ~/.config/rclone/rclone.conf
 time rclone --onedrive-chunk-size 250M --stats 5s copy ccache.tar.gz "${RCLONE_REMOTE_USED_FOR_CCACHE_STORAGE_NAME}":/"${CCACHE_STORAGE_DIRECTORY}"/ -P
 
 rom_upload() {
-    cp -R /tmp/rom/out/target/product/"${DEVICE_CODENAME}"/*zip /tmp/"${DEVICE_CODENAME}"-"${ROM_NAME}"-"${BUILD_TYPE}"-latest.zip
+    cp -R /tmp/rom/out/target/product/"${DEVICE_CODENAME}"/*zip /tmp/rom.zip
     cp -R /tmp/rom/out/target/product/"${DEVICE_CODENAME}"/"${DEVICE_CODENAME}".json /tmp/"${DEVICE_CODENAME}".json || echo "Skipping ${DEVICE_CODENAME}*json"
-    time rclone --checkers=64 --onedrive-chunk-size 250M --stats 5s copy /tmp/"${DEVICE_CODENAME}"-"${ROM_NAME}"-"${BUILD_TYPE}"-latest.zip "${RCLONE_REMOTE_USED_FOR_CCACHE_STORAGE_NAME}":/"${TEMP_STORAGE_IN_CCACHE_DIRECTORY}"/ -P
+    time rclone --checkers=64 --onedrive-chunk-size 250M --stats 5s copy /tmp/rom.zip "${RCLONE_REMOTE_USED_FOR_CCACHE_STORAGE_NAME}":/"${TEMP_STORAGE_IN_CCACHE_DIRECTORY}"/ -P
     time rclone --checkers=64 --onedrive-chunk-size 250M --stats 5s copy /tmp/"${DEVICE_CODENAME}".json "${RCLONE_REMOTE_USED_FOR_CCACHE_STORAGE_NAME}":/"${TEMP_STORAGE_IN_CCACHE_DIRECTORY}"/ -P || echo "Skipping ${DEVICE_CODENAME}*json"
     time rclone --checkers=64 --onedrive-chunk-size 250M --stats 5s copy /tmp/rom/out/target/product/"${DEVICE_CODENAME}"/*zip "${RCLONE_REMOTE_USED_FOR_ROM_UPLOAD_NAME}":/"${ROM_STORAGE_DIRECTORY}"/ -P
     exit 0
