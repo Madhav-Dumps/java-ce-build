@@ -4,6 +4,8 @@ source "${CONFIG}"
 
 increment_ccache_run() {
     cd /tmp/
+    echo "GIT_ORG is $GIT_ORG_NAME"
+    echo "REPO name is $NAME_OF_THIS_REPOSITORY"
     if [[ "${GIT_ORG_NAME}" == "none" ]]; then GIT_ORG_NAME="${GIT_USER_NAME}" ; fi
     git clone --depth=1 https://github.com/"${GIT_ORG_NAME}"/"${NAME_OF_THIS_REPOSITORY}" -b "${CURRENT_BRANCH_OF_THIS_REPO}" "${NAME_OF_THIS_REPOSITORY}"
     cd "${NAME_OF_THIS_REPOSITORY}"
