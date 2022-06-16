@@ -5,8 +5,8 @@ on:
 
 env:
   GIT_GITHUB_TOKEN: "${{secrets.GIT_GITHUB_TOKEN}}"
-  GIT_CONFIG_EMAIL: "96990463+bruhminusprotesting@users.noreply.github.com"
-  GIT_CONFIG_USERNAME: "bruhminusprotesting"
+  GIT_CONFIG_EMAIL: "85406105+Madhav-Sheth@users.noreply.github.com"
+  GIT_CONFIG_USERNAME: "Madhav-Sheth"
   WORKING_BRANCH: "crdroid-lava"
 
 jobs:
