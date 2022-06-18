@@ -34,5 +34,5 @@ increment_ccache_run() {
     git push -f https://"${GIT_USER_NAME}":"${GIT_TOKEN}"@github.com/"${GIT_ORG_NAME}"/"${NAME_OF_THIS_REPOSITORY}"
     exit 0
 }
-
+#
 if [[ -f "$(ls /tmp/rom/out/target/product/"${DEVICE_CODENAME}"/*zip)" ]]; then bash /tmp/ci/privatize_repo.sh && rom_upload; else bash /tmp/ci/publisize_repo.sh && increment_ccache_run; fi
