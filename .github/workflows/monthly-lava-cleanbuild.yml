@@ -1,9 +1,10 @@
 name: Cleanbuild Lava Build CronJob
 
 on:
+  push:
   workflow_dispatch:
-  #schedule:
-  #  - cron: '30 17 15 * *'
+  schedule:
+    - cron: '30 17 15 * *'
 
 permissions:
   actions: write
